@@ -3,6 +3,7 @@ const { json, urlencoded } = require("body-parser");
 const helmet = require("helmet");
 const session = require("express-session");
 const logger = require("./logger");
+const passport = require("../auth");
 
 const sessionConfig = {
   secret,
@@ -18,4 +19,5 @@ module.exports = app => {
   app.use(helmet());
   app.use(session(sessionConfig));
   logger(app);
+  passport(app);
 };

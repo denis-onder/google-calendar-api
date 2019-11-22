@@ -1,6 +1,6 @@
 const { STRING } = require("sequelize");
 const uuid = require("uuid/v4");
-const database = require("../");
+const database = require("../db");
 
 const User = database.define("User", {
   email: {

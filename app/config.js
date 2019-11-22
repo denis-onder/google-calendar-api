@@ -14,5 +14,9 @@ module.exports = {
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
     host: process.env.DB_HOST
+  },
+  oauth: {
+    clientID: process.env.OAUTH_CLIENT_ID,
+    secret: process.env.OAUTH_CLIENT_SECRET
   }
 };

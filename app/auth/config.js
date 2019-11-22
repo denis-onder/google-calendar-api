@@ -1,4 +1,5 @@
 const User = require("../models/user.model.js");
+const strategy = require("./strategy");
 
 async function deserialize(id, done) {
   const user = User.findOne({ where: id });
@@ -9,4 +10,5 @@ async function deserialize(id, done) {
 module.exports = passport => {
   passport.serializeUser(({ id }, done) => done(null, id));
   passport.deserializeUser(({ id }, done) => deserialize(id, done));
+  passport.use("google", strategy);
 };
