@@ -1,14 +1,12 @@
 # Calendar App
 
-> Made with the Calendar API and Google OAuth
+> Made with the Google Calendar API
 
 ### Scripts:
 
 `npm start` - Starts the Node server.
 
 `npm run dev` - Starts the Node server in development mode using Nodemon.
-
-`npm test` - Runs the test suite.
 
 ### Environmental variables:
 
@@ -20,13 +18,6 @@ An example file (`example.env`) has been provided, which is located in the root 
 ```env
 PORT=
 NODE_ENV=
-SECRET=
-DB_NAME=
-DB_USERNAME=
-DB_PASSWORD=
-DB_PORT=
-DB_DIALECT=
-DB_HOST=
 OAUTH_CLIENT_ID=
-OAUTH_CLIENT_SECRET=
+OAUTH_API_KEY=
 ```

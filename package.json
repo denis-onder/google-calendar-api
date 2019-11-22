@@ -5,8 +5,7 @@
   "main": "bin/start.js",
   "scripts": {
     "start": "node .",
-    "dev": "nodemon .",
-    "test": "mocha test/**/*.test.js"
+    "dev": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -14,11 +13,10 @@
   },
   "keywords": [
     "Google",
-    "OAuth",
     "Calendar",
     "Express",
     "Node",
-    "MySQL"
+    "Handlebars"
   ],
   "author": "Denis Onder",
   "license": "MIT",
@@ -27,26 +25,14 @@
   },
   "homepage": "https://github.com/denis-onder/google-calendar-api#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "express-session": "^1.17.0",
-    "google-auth-library": "^5.5.1",
-    "googleapis": "^45.0.0",
     "helmet": "^3.21.2",
-    "morgan": "^1.9.1",
-    "passport": "^0.4.0",
-    "passport-google-oauth": "^2.0.0",
-    "pg": "^7.14.0",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.2"
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
     "eslint": "^6.6.0",
-    "mocha": "^6.2.2",
     "nodemon": "^2.0.0"
   }
 }

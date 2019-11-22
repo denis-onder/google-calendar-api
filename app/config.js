@@ -3,7 +3,7 @@ require("dotenv").config();
 
 module.exports = {
   server: {
-    port: process.env.PORT || 5000,
+    port: process.env.PORT || 8000,
     env: process.env.NODE_ENV || "development"
   },
   oauth: {
