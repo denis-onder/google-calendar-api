@@ -1,0 +1,27 @@
+{
+  "name": "google-calendar-app",
+  "version": "1.0.0",
+  "description": "An app that uses Google OAuth and the Calendar API to retrieve and render out events",
+  "main": "bin/start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denis-onder/google-calendar-api.git"
+  },
+  "keywords": [
+    "Google",
+    "OAuth",
+    "Calendar",
+    "Express",
+    "Node",
+    "MySQL"
+  ],
+  "author": "Denis Onder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/denis-onder/google-calendar-api/issues"
+  },
+  "homepage": "https://github.com/denis-onder/google-calendar-api#readme"
+}
