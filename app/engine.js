@@ -7,10 +7,9 @@ module.exports = app => {
     handlebars({
       extname: "hbs",
       defaultLayout: "default",
-      layoutsDir: join(__dirname, "../../views/layouts"),
-      partialsDir: join(__dirname, "../../views/partials")
+      layoutsDir: join(__dirname, "../views/layouts")
     })
   );
   app.set("view engine", "hbs");
-  app.set("views", join(__dirname, "../../views"));
+  app.set("views", join(__dirname, "../views"));
 };

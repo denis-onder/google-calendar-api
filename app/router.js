@@ -1,22 +1,6 @@
-const passport = require("passport");
+const { clientID, apiKey } = require("./config").oauth;
 
 module.exports = app => {
-  app.get(
-    "/auth/google",
-    passport.authenticate("google", {
-      session: false,
-      scope: [
-        "https://www.googleapis.com/auth/userinfo.profile",
-        "https://www.googleapis.com/auth/userinfo.email"
-      ]
-    })
-  );
-  app.get(
-    "/redirect",
-    passport.authenticate("google", {
-      failureRedirect: "/"
-    }),
-    // FIXME: Render the dashboard
-    (req, res) => res.json(req.user)
-  );
+  // Render routes
+  app.get("/", (req, res) => res.render("main", { clientID, apiKey }));
 };

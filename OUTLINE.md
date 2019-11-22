@@ -5,5 +5,5 @@
 
 **Approach:**
 1. Create a Node server on top of Express
-2. Set up a REST API to handle authentication and retrieve events from the calendar
-3. Pass the events from the back-end to the view, and render them as a list
+2. Set up a REST API to render the view
+3. Wire the Calendar API from the view, and render the events

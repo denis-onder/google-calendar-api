@@ -1,7 +1,6 @@
 const express = require("express");
 const { port, env } = require("./config").server;
 const applyMiddleware = require("./middleware");
-const database = require("./db");
 const router = require("./router");
 const { join } = require("path");
 const engine = require("./engine");
@@ -22,15 +21,7 @@ class Server {
     this.app.use(express.static(join(__dirname, "../public")));
     engine(this.app);
   }
-  connectToDatabase() {
-    database
-      .authenticate()
-      .then(() => console.log("Connected to the database!"))
-      .catch(this.stop);
-    database.sync({ logging: false });
-  }
   start() {
-    this.connectToDatabase();
     this.app.listen(port, err =>
       err
         ? this.stop(err)
