@@ -4,7 +4,8 @@
   "description": "An app that uses Google OAuth and the Calendar API to retrieve and render out events",
   "main": "bin/start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,16 @@
   "bugs": {
     "url": "https://github.com/denis-onder/google-calendar-api/issues"
   },
-  "homepage": "https://github.com/denis-onder/google-calendar-api#readme"
+  "homepage": "https://github.com/denis-onder/google-calendar-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^2.0.0"
+  }
 }
