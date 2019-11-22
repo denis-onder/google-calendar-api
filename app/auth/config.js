@@ -1,6 +1,5 @@
 const { OAuth2Strategy } = require("passport-google-oauth");
-const { register } = require("../controller");
-const User = require("../models/user.model");
+const { register, lookup } = require("../controller");
 
 const {
   server: { port },
@@ -15,11 +14,10 @@ const strategy = new OAuth2Strategy(
       clientID: profile.id,
       email: profile.emails[0].value
     };
-    const user = await User.findOne({ where: { clientID: data.clientID } });
+    const user = await lookup(data.clientID);
     if (!user) {
       // Register a new user
-      const newUser = await register(data.email, clientID);
-      return done(null, newUser);
+      return done(null, await register(data.email, data.clientID));
     }
     // Return the user
     return done(null, user);
