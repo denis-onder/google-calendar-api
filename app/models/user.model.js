@@ -1,5 +1,4 @@
 const { STRING } = require("sequelize");
-const uuid = require("uuid/v4");
 const database = require("../db");
 
 const User = database.define("User", {
@@ -9,8 +8,7 @@ const User = database.define("User", {
   },
   clientID: {
     type: STRING,
-    unique: true,
-    defaultValue: uuid()
+    unique: true
   }
 });
 

@@ -13,7 +13,9 @@ module.exports = app => {
   );
   app.get(
     "/redirect",
-    passport.authenticate("google", { failureRedirect: "/login" }),
-    (req, res) => res.json({ loggedIn: true })
+    passport.authenticate("google", {
+      failureRedirect: "/"
+    }),
+    (req, res) => res.json(req.user)
   );
 };
