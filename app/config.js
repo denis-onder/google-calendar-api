@@ -4,7 +4,8 @@ require("dotenv").config();
 module.exports = {
   server: {
     port: process.env.PORT || 5000,
-    env: process.env.NODE_ENV || "development"
+    env: process.env.NODE_ENV || "development",
+    secret: process.env.SECRET || "secret"
   },
   database: {
     name: process.env.DB_NAME,

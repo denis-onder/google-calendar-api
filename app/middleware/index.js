@@ -1,4 +1,4 @@
-const { env, secret } = require("../config");
+const { env, secret } = require("../config").server;
 const { json, urlencoded } = require("body-parser");
 const helmet = require("helmet");
 const session = require("express-session");
@@ -8,10 +8,9 @@ const sessionConfig = {
   secret,
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 3600 }
+  cookie: { maxAge: 3600 },
+  secure: env === "development" ? false : true
 };
-
-if (env !== "development") sessionConfig.cookie.secure = true;
 
 module.exports = app => {
   app.use(json());
