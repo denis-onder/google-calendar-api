@@ -4,8 +4,10 @@
   "description": "An app that uses Google OAuth and the Calendar API to retrieve and render out events",
   "main": "bin/start.js",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon ."
+    "scss": "node-sass public/scss -o public/css",
+    "scss:watch": "node-sass --watch public/scss -o public/css",
+    "start": "npm run scss && node .",
+    "dev": "npm run scss && nodemon ."
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,7 @@
   },
   "devDependencies": {
     "eslint": "^6.6.0",
+    "node-sass": "^4.13.0",
     "nodemon": "^2.0.0"
   }
 }
