@@ -16,6 +16,7 @@ module.exports = app => {
     passport.authenticate("google", {
       failureRedirect: "/"
     }),
+    // FIXME: Render the dashboard
     (req, res) => res.json(req.user)
   );
 };

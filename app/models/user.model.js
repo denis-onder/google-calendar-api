@@ -3,8 +3,7 @@ const database = require("../db");
 
 const User = database.define("User", {
   email: {
-    type: STRING,
-    unique: true
+    type: STRING
   },
   clientID: {
     type: STRING,
