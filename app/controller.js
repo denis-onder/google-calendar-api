@@ -8,5 +8,23 @@ module.exports = {
     } catch (error) {
       throw new Error(error);
     }
+  },
+  lookup: async clientID => {
+    try {
+      const user = await User.findOne({ where: { clientID } });
+      if (!user) return false;
+      return user.dataValues;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+  remove: async clientID => {
+    try {
+      const deleted = User.destroy({ where: { clientID } });
+      if (!deleted) return false;
+      return true;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 };

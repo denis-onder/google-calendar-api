@@ -1,4 +1,5 @@
 const { OAuth2Strategy } = require("passport-google-oauth");
+const { register } = require("../controller");
 const User = require("../models/user.model");
 
 const {
@@ -17,10 +18,7 @@ const strategy = new OAuth2Strategy(
     const user = await User.findOne({ where: { clientID: data.clientID } });
     if (!user) {
       // Register a new user
-      const newUser = await User.create({
-        email: data.email,
-        clientID: data.clientID
-      });
+      const newUser = await register(data.email, clientID);
       return done(null, newUser);
     }
     // Return the user
@@ -29,7 +27,7 @@ const strategy = new OAuth2Strategy(
 );
 
 module.exports = passport => {
-  passport.use("google", strategy);
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((user, done) => done(null, user));
+  passport.use("google", strategy);
 };
