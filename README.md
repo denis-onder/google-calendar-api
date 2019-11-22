@@ -20,4 +20,11 @@ An example file (`example.env`) has been provided, which is located in the root 
 ```env
 PORT=
 NODE_ENV=
+SECRET=
+DB_NAME=
+DB_USERNAME=
+DB_PASSWORD=
+DB_PORT=
+DB_DIALECT=
+DB_HOST=
 ```
