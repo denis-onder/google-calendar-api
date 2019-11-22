@@ -1,5 +1,5 @@
 const express = require("express");
-const { server } = require("./config");
+const { port, env } = require("./config").server;
 const applyMiddleware = require("./middleware");
 
 class Server {
@@ -9,11 +9,11 @@ class Server {
     applyMiddleware(this.app);
   }
   start() {
-    this.app.listen(server.port, err =>
+    this.app.listen(port, err =>
       err
         ? this.stop(err)
         : console.log(
-            `Server running!\nAddress: http://localhost:${server.port}\nEnvironment: ${server.env}`
+            `Server running!\nAddress: http://localhost:${port}\nEnvironment: ${env}`
           )
     );
   }

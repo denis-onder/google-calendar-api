@@ -4,3 +4,7 @@
 /.vscode
 .env
 *.sh
+yarn.lock
+/logs
+backup.env
+/keys
