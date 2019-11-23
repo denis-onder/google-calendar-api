@@ -1,5 +1,5 @@
 **Requirements:**
-- Allow users to log in using Google OAuth 
+- Allow users to log in using their Google account
 - Pull Google Calendar events from the user
 - Render the events in the form of a list 
 
