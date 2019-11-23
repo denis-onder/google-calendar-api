@@ -1,14 +1,11 @@
 <div id="main">
   <p class="main_header">Google Calendar</p>
-
-  <!--Add buttons to initiate auth sequence and sign out-->
   <button
     class="main_btn bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
     id="authorize_button" style="display: none;">Log In</button>
   <button
     class="main_btn bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
     id="signout_button" style="display: none;">Sign Out</button>
-
   <div id="content" style="white-space: div-wrap;">
   </div>
 </div>
@@ -27,15 +24,10 @@
     { name: 'Saturday', backgroundColor: '#240b36' },
   ];
 
-  // Array of API discovery doc URLs for APIs used by the quickstart
-  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-
-  // Authorization scopes required by the API; multiple scopes can be
-  // included, separated by spaces.
-  var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
-
-  var authorizeButton = document.getElementById('authorize_button');
-  var signoutButton = document.getElementById('signout_button');
+  const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+  const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+  const authorizeButton = document.getElementById('authorize_button');
+  const signoutButton = document.getElementById('signout_button');
 
   /**
    *  On load, called to load the auth2 library and API client library.
@@ -94,6 +86,7 @@
    */
   function handleSignoutClick(event) {
     pre.innerHTML = "";
+    pre.style.display = "block";
     gapi.auth2.getAuthInstance().signOut();
   }
 
@@ -120,16 +113,14 @@
       'timeMin': (new Date()).toISOString(),
       'orderBy': 'startTime'
     }).then(function (response) {
-      var events = response.result.items;
-      console.log(events)
+      const events = response.result.items;
       if (events.length > 0) {
-        // filterTodaysEvents(events)
         appendPre('Upcoming events:');
         pre.style.display = 'grid';
         pre.innerHTML = ""
         for (i = 0; i < events.length; i++) {
-          var event = events[i];
-          var when = event.start.dateTime;
+          const event = events[i];
+          const when = event.start.dateTime;
           if (!when) {
             when = event.start.date;
           }
@@ -153,26 +144,6 @@
         );
       }
     });
-  }
-
-  /**
-   * Return events that are happening today!
-   * @param {Array} events Events
-   */
-  function filterTodaysEvents(events) {
-    const date = new Date();
-    const now = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-    const todaysEvents = events.filter(e => {
-      const eventTime = e.start.dateTime.split('T')[0];
-      if (eventTime === now) {
-        return e;
-      };
-    });
-    if (todaysEvents.length < 0) {
-      console.log('No events today.')
-    } else {
-      console.log(`You got ${todaysEvents.length} events today!`);
-    }
   }
 </script>
 
