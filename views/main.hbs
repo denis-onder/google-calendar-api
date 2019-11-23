@@ -18,13 +18,13 @@
   const CLIENT_ID = "{{clientID}}";
   const API_KEY = "{{apiKey}}";
   const days = [
-    { name: 'Sunday', backgroundColor: '#eae2b7', color: 'black' },
-    { name: 'Monday', backgroundColor: '#003049', color: 'white' },
-    { name: 'Tuesday', backgroundColor: '#d62828', color: 'white' },
-    { name: 'Wednesday', backgroundColor: '#f77f00', color: 'white' },
-    { name: 'Thurday', backgroundColor: '#fcbf49', color: 'black' },
-    { name: 'Friday', backgroundColor: '#ff3c38 ', color: 'white' },
-    { name: 'Saturday', backgroundColor: '#c0d6df', color: 'black' },
+    { name: 'Sunday', backgroundColor: '#ba672c' },
+    { name: 'Monday', backgroundColor: '#004e64' },
+    { name: 'Tuesday', backgroundColor: '#3ab795' },
+    { name: 'Wednesday', backgroundColor: '#008bf8' },
+    { name: 'Thurday', backgroundColor: '#ba1200' },
+    { name: 'Friday', backgroundColor: '#8f2d56 ' },
+    { name: 'Saturday', backgroundColor: '#240b36' },
   ];
 
   // Array of API discovery doc URLs for APIs used by the quickstart
@@ -136,7 +136,7 @@
           const day = days[new Date(when).getDay()];
           const date = when.split("T")[0].split("-");
           appendPre(
-            `<div class="content_event" style="background-color: ${day.backgroundColor}; color: ${day.color};">
+            `<div class="content_event" style="background-color: ${day.backgroundColor};">
                   <p class="content_event_day">${day.name}</p>
                   <p class="content_event_date">${date[1]}/${date[2]}/${date[0]}</p>
                   <p class="content_event_title">${event.summary}</p>
