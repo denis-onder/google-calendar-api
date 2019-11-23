@@ -125,6 +125,7 @@
         if (events.length > 0) {
           // filterTodaysEvents(events)
           appendPre('Upcoming events:');
+          pre.style.display = 'grid';
           pre.innerHTML = ""
           for (i = 0; i < events.length; i++) {
             var event = events[i];
@@ -140,12 +141,16 @@
                   <p class="content_event_date">${date[2]}th of ${date[1]}, ${date[0]}</p>
                   <p class="content_event_title">${event.summary}</p>
                   <p class="content_event_desc">${event.description ? event.description : "No event description"}</p>
-                  <a href=${event.htmlLink}>More details</a>
+                  <a class="content_event_link" href=${event.htmlLink} target="_blank">More details</a>
                </div>`
             )
           }
         } else {
-          appendPre('No upcoming events found.');
+          appendPre(
+            `<div class="content_event content_event--empty">
+              <p class="content_event_desc">No events found</p>
+             </div>`
+          );
         }
       });
     }
