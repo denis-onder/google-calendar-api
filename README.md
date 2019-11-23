@@ -4,9 +4,13 @@
 
 ### Scripts:
 
-`npm start` - Starts the Node server.
+`npm run scss` - Compiles SCSS to CSS.
 
-`npm run dev` - Starts the Node server in development mode using Nodemon.
+`npm run scss:watch` - Runs the SCSS compiler in watch mode.
+
+`npm start` - Runs `npm run scss` and starts the Node server.
+
+`npm run dev` - Runs `npm run scss` and starts the Node server in development mode using Nodemon.
 
 ### Environmental variables:
 
@@ -36,7 +40,7 @@ CALENDAR_CLIENT_ID=<YOUR_CLIENT_ID>
 CALENDAR_API_KEY=<YOUR_API_KEY>
 ```
 
-After that has been done, if you are planning to use a port that is different than `8000`, go back to the [Google API Console](https://console.developers.google.com/), select your application(should be named `Quickstart` by defualt), and add `http://localhost:<YOUR_PORT>` to the list of authorized URLs.
+After that has been done, if you are planning to use a port that is different than `8000`, go back to the [Google API Console](https://console.developers.google.com/), select your application(should be named `Quickstart` by default), and add `http://localhost:<YOUR_PORT>` to the list of authorized URLs.
 
 If you have not done that already, run `npm install` to install all the necessary dependencies, and after that is done, you can finally run `npm start` or `npm run dev` to start the application.
 
