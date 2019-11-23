@@ -121,6 +121,7 @@
         'orderBy': 'startTime'
       }).then(function (response) {
         var events = response.result.items;
+        console.log(events)
         if (events.length > 0) {
           // filterTodaysEvents(events)
           appendPre('Upcoming events:');
@@ -132,7 +133,16 @@
               when = event.start.date;
             }
             const day = days[new Date(when).getDay()];
-            appendPre(`<div class="content_event" style="background-color: ${day.backgroundColor}; color: ${day.color};">${event.summary + ' (' + day.name + when + ')'}</div>`)
+            const date = when.split("T")[0].split("-");
+            appendPre(
+              `<div class="content_event" style="background-color: ${day.backgroundColor}; color: ${day.color};">
+                  <p class="content_event_day">${day.name}</p>
+                  <p class="content_event_date">${date[2]}th of ${date[1]}, ${date[0]}</p>
+                  <p class="content_event_title">${event.summary}</p>
+                  <p class="content_event_desc">${event.description ? event.description : "No event description"}</p>
+                  <a href=${event.htmlLink}>More details</a>
+               </div>`
+            )
           }
         } else {
           appendPre('No upcoming events found.');

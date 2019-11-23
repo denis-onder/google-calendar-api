@@ -14,12 +14,17 @@
   }
 
   .main_btn {
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
     background-color: #fff;
     color: black;
     font-weight: bold;
     width: 100%;
     margin-bottom: 20px;
     padding: 1em;
+    &:hover {
+      background-color: #eeeeee;
+    }
   }
 
   .main_btn,
